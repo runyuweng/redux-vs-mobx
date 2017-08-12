@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './ListItem.css';
-import _ from 'lodash';
 
 export default class ListItem extends Component{
   constructor(props){
     super(props);
+    console.log(props);
     this.state = {
       record: props.record,
       showTextarea: false,
       replyContent: ''
     }
+  }
+
+  componentWillReceiveProps(props){
+    this.setState({
+      record: props.record
+    })
   }
 
   handleReply = () => {
@@ -20,21 +26,21 @@ export default class ListItem extends Component{
   }
 
   handleSave = () => {
-    const record = _.cloneDeep(this.state.record);
-    record.reply.push({
-      id: '',
-      name: 'wry',
-      words: this.state.replyContent,
-      timeStamp: Date.parse(new Date())
+    this.props.onAddReply({
+      messageId: this.props.messageId,
+      reply: {
+        id: this.state.record.reply.length,
+        name: 'wry',
+        timeStamp: Date.parse(new Date()),
+        words:this.state.replyContent
+      }
     })
     this.setState({
       showTextarea: !this.state.showTextarea,
-      record: record
     })
   }
 
   handleChangeReply =(e) => {
-    console.log(e.target.value)
     this.setState({
       replyContent: e.target.value
     })

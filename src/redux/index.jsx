@@ -1,8 +1,10 @@
 import React from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import List from './List';
-import Intro from './Intro';
+
+import List from './containers/ListContainer';
+import Intro from './components/Intro';
 import './index.css';
+
 const Page = ({match}) => <div className='redux'>
   <h1 className="title">Redux</h1>
   <Route path={`${match.url}/home`} component={Intro}/>
