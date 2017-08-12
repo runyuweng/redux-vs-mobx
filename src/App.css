@@ -8,10 +8,19 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  height: 250px;
   padding: 20px;
   color: white;
+  a{
+    font-size: 20px;
+    color: white;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    transition: color 0.5s;
+    &:hover{
+      color: grey;
+    }
+  }
 }
 
 .App-intro {
