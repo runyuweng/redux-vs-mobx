@@ -4,7 +4,6 @@
 }
 .redux {
   a{
-    text-decoration: none;
     margin: 0 10px;
     font-size: 20px;
     color: white;
@@ -17,6 +16,6 @@
   }
 }
 .link-group{
-  margin-bottom: 10px;
+  margin-top: 50px;
   text-align: center;
 }

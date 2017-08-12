@@ -11,7 +11,7 @@ const index = () =>< div className="App" >
       className="App-logo"
       alt="logo" />
     <h2> Demo for Redux vs MobX </h2>
-    <Link to='/redux'>redux</Link>&nbsp;&nbsp;
+    <Link to='/redux/home'>redux</Link>&nbsp;&nbsp;
     <Link to='/mobx'>mobx</Link>
   </div>
 </div>
