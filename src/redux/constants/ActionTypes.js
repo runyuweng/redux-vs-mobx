@@ -1,2 +1,2 @@
 export const ADD_REPLY = 'ADD_REPLY';
-export const ADD_MESSAGE = 'ADD_MESSAGW';
+export const ADD_MESSAGE = 'ADD_MESSAGE';

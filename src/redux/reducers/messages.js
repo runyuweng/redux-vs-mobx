@@ -37,13 +37,13 @@ const initialState = {
 const messages = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MESSAGE:
-      return {
-        ...state
-      }
+      const newState = _.cloneDeep(state);
+      newState.messages.push(action.text.message);
+      return newState;
 
     case ADD_REPLY:
-      const newState = _.cloneDeep(state);
-      const newMessages = newState.messages.map(d => {
+      const newState1 = _.cloneDeep(state);
+      const newMessages = newState1.messages.map(d => {
         if(d.id === action.text.messageId){
           d.reply.push(action.text.reply)
         }
