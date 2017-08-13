@@ -1,8 +1,13 @@
 .redux-intro{
   margin-top: 50px;
   color: #fff;
+  text-align: center;
   pre{
+    text-align:left;
     width:400px;
     margin: 0 auto;
+  }
+  img{
+    margin: 20px 0;
   }
 }

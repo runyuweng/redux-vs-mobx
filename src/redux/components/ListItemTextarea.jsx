@@ -12,12 +12,15 @@ export default class ListItemTextarea extends Component{
   handleSubmit = () => {
     this.props.onAddMessage({
       message:{
-        id: this.props.messages.length,
+        id: String(this.props.messages.length),
         name: 'wry',
         timeStamp: Date.parse(new Date()),
         words: this.state.textContent,
         reply: []
       }
+    })
+    this.setState({
+      textContent: ''
     })
   }
 
@@ -36,6 +39,7 @@ export default class ListItemTextarea extends Component{
   render(){
     return (<div className='list-textarea-block'>
       <textarea
+        value={this.state.textContent}
         onChange={this.handleChange}
         className='list-item-textarea'
         placeholder='请在此输入回复内容'/>

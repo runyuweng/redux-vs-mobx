@@ -1,5 +1,6 @@
 import React from 'react';
 import './Intro.css';
+import reduxImg from '../static/redux.png';
 
 const Intro = () => <div className="redux-intro">
   <pre>
@@ -33,9 +34,13 @@ const Intro = () => <div className="redux-intro">
     ]
   },
   ...
-  ]`}
+  ]
+  
+  ## 数据流向图
+  从下图可以看出redux中的数据流向是单向的`}
 
   </pre>
+  <img src={reduxImg}/>
 </div>;
 
 export default Intro;

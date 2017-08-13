@@ -29,7 +29,7 @@ export default class ListItem extends Component{
     this.props.onAddReply({
       messageId: this.props.messageId,
       reply: {
-        id: this.state.record.reply.length,
+        id: String(this.state.record.reply.length),
         name: 'wry',
         timeStamp: Date.parse(new Date()),
         words:this.state.replyContent
@@ -54,7 +54,9 @@ export default class ListItem extends Component{
         <span>{new Date(d.timeStamp).toString()}</span>
       </div>
       <div>
-        {d.words}
+        <pre>
+          {d.words}
+        </pre>
       </div>
     </div>)
 
@@ -64,7 +66,9 @@ export default class ListItem extends Component{
         <span>{new Date(record.timeStamp).toString()}</span>
       </div>
       <div className='list-item-body'>
-        {record.words}
+        <pre>
+          {record.words}
+        </pre>
       </div>
       <div className='list-item-reply'>
         {showTextarea?<span onClick={this.handleSave}>
