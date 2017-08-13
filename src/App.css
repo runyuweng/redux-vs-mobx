@@ -31,3 +31,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+a{
+  margin: 0 10px;
+  font-size: 20px;
+  color: white;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  transition: color 0.5s;
+  &:hover{
+    color: grey;
+  }
+}

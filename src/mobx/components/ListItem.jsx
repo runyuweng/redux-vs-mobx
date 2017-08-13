@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import { observer } from 'mobx-react'
 import PropTypes from 'prop-types';
 import './ListItem.css';
+import store from '../AppState';
 
+@observer
 export default class ListItem extends Component{
   constructor(props){
     super(props);
@@ -25,14 +28,11 @@ export default class ListItem extends Component{
   }
 
   handleSave = () => {
-    this.props.onAddReply({
-      messageId: this.props.messageId,
-      reply: {
-        id: String(this.state.record.reply.length),
-        name: 'wry',
-        timeStamp: Date.parse(new Date()),
-        words:this.state.replyContent
-      }
+    store.addReply(this.props.messageId,{
+      id: String(this.state.record.reply.length),
+      name: 'wry',
+      timeStamp: Date.parse(new Date()),
+      words:this.state.replyContent
     })
     this.setState({
       showTextarea: !this.state.showTextarea,
@@ -47,7 +47,7 @@ export default class ListItem extends Component{
 
   render(){
     const {record, showTextarea} = this.state;
-    const replyList = this.state.record.reply.map(d=><div className='list-item-reply-item'>
+    const replyList = this.state.record.reply.map(d=><div className='list-item-reply-item' key={d.id}>
       <div className='list-item-title'>
         <span>{d.name}</span>
         <span>{new Date(d.timeStamp).toString()}</span>

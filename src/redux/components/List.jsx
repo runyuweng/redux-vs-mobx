@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ListItemContainer from '../containers/ListItemContainer';
 import ListItemTextareaContainer from '../containers/ListItemTextareaContainer';
 

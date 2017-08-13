@@ -1,22 +1,12 @@
 import React from 'react';
 import './Intro.css';
-import reduxImg from '../static/redux.png';
+// import reduxImg from '../static/redux.png';
 
-const Intro = () => <div className="redux-intro">
+const Intro = () => <div className="mobx-intro">
   <pre>
   {`# 留言板demo
 
-  ## 文件划分：
-
-  |
-  |-Index（Redux Demo首页，也就是当前页面）
-  |
-  |-List（留言板，留言列表页，包含ListItem）
-  |
-  |-ListItem（留言列表中的每条记录，包含回复）
-  
-
-  ## redux store数据结构：
+  ## mobx store数据结构：
 
   const data = [{
     name: 'wry',
@@ -40,7 +30,7 @@ const Intro = () => <div className="redux-intro">
   从下图可以看出redux中的数据流向是单向的`}
 
   </pre>
-  <img src={reduxImg} alt='redux'/>
+  {/* <img src={reduxImg}/> */}
 </div>;
 
 export default Intro;
